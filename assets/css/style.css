@@ -1,1 +1,38 @@
-/* this page is good its linked up to bootstrap and our html */
+body {
+    background-color:whitesmoke;
+}
+#run-search {
+background-color: rgb(67, 127, 255);
+}
+#clear-all {
+background-color: rgb(67, 127, 255);
+}
+.jumbotron {
+    background-color: lightgray;
+}
+.row {
+    margin-bottom: 20px;
+}
+#title {
+    text-align: center;
+
+}
+#form {
+    width: 100%;
+    height: 100%;
+    
+}
+#weather {
+    width: 100%;
+    height: 264px;
+    
+}
+#map {
+    width: 100%;
+    height: 410px;
+    
+}
+#results {
+    width: 100%;
+    height: 300px;
+}
