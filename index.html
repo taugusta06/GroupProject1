@@ -1,22 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>weatherman</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <title>Events Bro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<!-- html crap -->
-<div>
+    <!-- html crap -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 id="title">Events Bro</h1>
+            <div class="row">
 
-    
-</div>
+                <div class="col-sm-6">
+
+                    <div class="row">
+                        <div class="card" id="form">
+                            <form role="form">
+
+                                <!-- Here we create the text box for capturing the search term-->
+                                <div class="form-group">
+                                    <label for="search">Search Term:</label>
+                                    <input type="text" class="form-control" id="search-term">
+                                </div>
 
 
-<script src="assets/javascript/app.js"></script>
+                                <!-- Here we have our final submit button -->
+                                <button type="submit" class="btn btn-default" id="run-search">
+                                    <i class="fa fa-search"></i> Search</button>
+                                <button class="btn btn-default" id="clear-all">
+                                    <i class="fa fa-trash"></i> Clear Results</button>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="card" id="weather">
+                            <div id="city"></div>
+                            <div id="wind"></div>
+                            <div id="humidity"></div>
+                            <div id="temp"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="card" id="map">im the map im the map</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card" id="results">results</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
