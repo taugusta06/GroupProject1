@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>weatherman</title>
+    <title>Events Bro</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -15,7 +15,7 @@
     <!-- html crap -->
     <div class="container">
         <div class="jumbotron">
-            <h1 id="title"> title bro title bro title bro </h1>
+            <h1 id="title">Events Bro</h1>
             <div class="row">
 
                 <div class="col-sm-6">
@@ -30,16 +30,7 @@
                                     <input type="text" class="form-control" id="search-term">
                                 </div>
 
-                                <!-- Here we capture the number of records that the user wants to retrieve  -->
-                                <div class="form-group">
-                                    <label for="pwd">Number of Records to Retrieve:</label>
-                                    <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
-                                        <option selected value="1">1</option>
-                                        <!-- Setting the option for 5 as default -->
-                                        <option value="5" selected>5</option>
-                                        <option value="10">10</option>
-                                    </select>
-                                </div>
+
                                 <!-- Here we have our final submit button -->
                                 <button type="submit" class="btn btn-default" id="run-search">
                                     <i class="fa fa-search"></i> Search</button>
@@ -51,7 +42,12 @@
                     </div>
 
                     <div class="row">
-                        <div class="card" id="weather">weatherresults weather</div>
+                        <div class="card" id="weather">
+                            <div id="city"></div>
+                            <div id="wind"></div>
+                            <div id="humidity"></div>
+                            <div id="temp"></div>
+                        </div>
                     </div>
 
                 </div>
