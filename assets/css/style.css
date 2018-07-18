@@ -1,5 +1,7 @@
 body {
-    background-color:whitesmoke;
+    background-image: url("Phoenix.jpg");
+    height: 100%;
+    width: 100%;
 }
 #run-search {
 background-color: rgb(67, 127, 255);
@@ -10,14 +12,16 @@ background-color: rgb(67, 127, 255);
 font-weight: bold;
 }
 .jumbotron {
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0);
 }
 .row {
     margin-bottom: 20px;
+    opacity: .8;
 }
 #title {
     text-align: center;
-
+    font-weight: bold;
+    font-size: 60px;
 }
 #form {
     width: 100%;
@@ -33,14 +37,10 @@ font-weight: bold;
 #map {
     width: 100%;
     height: 410px;
-    
-}
-#footer {
-    width: 100%;
-    height: 100%;
-    font-weight: bold;
+    opacity: .8;
 }
 #results {
     width: 100%;
     height: 100%;
+    opacity: .8;
 }
