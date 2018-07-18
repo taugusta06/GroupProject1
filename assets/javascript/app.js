@@ -45,6 +45,8 @@ $("#run-search").on("click", function (event) {
   searchBandsInTown();
 });
 
+var lng = 0;
+var lat = 0;
 
 function searchBandsInTown(artist) {
 
@@ -59,18 +61,50 @@ function searchBandsInTown(artist) {
     console.log(response);
     console.log(response._embedded.events[0]._embedded.venues[0].name);
     console.log(Object.values(response._embedded.events[0]._embedded.venues[0].location));
+    console.log(Object.values(response._embedded.events[0]._embedded.venues[0].location.longitude));
+    
+    var longitude = Object.values(response._embedded.events[0]._embedded.venues[0].location.longitude);
+    console.log(Object.values(response._embedded.events[0]._embedded.venues[0].location.latitude));
+    var latitude = Object.values(response._embedded.events[0]._embedded.venues[0].location.latitude);
+    lng = parseFloat(longitude.join(''));
+    console.log(lng);
 
-    // Constructing HTML containing the artist information
-    var artistName = $("<h1>").text(response.name);
-    var artistURL = $("<a>").attr("href", response.url).append(artistName);
-    var artistImage = $("<img>").attr("src", response.thumb_url);
-    var trackerCount = $("<h2>").text(response.tracker_count + " fans tracking this artist");
-    var upcomingEvents = $("<h2>").text(response.upcoming_event_count + " upcoming events");
-    var goToArtist = $("<a>").attr("href", response.url).text("See Tour Dates");
+    lat = parseFloat(latitude.join(''));
+    console.log(lat);
+    
+    $("#map").empty();
+    venueMap();
 
+    //establish values for variables that need to be passed into the html page
+    var artistName = Object.values(response._embedded.events[0].name);
+    var name = artistName.join('');
+    
+    var venueName = Object.values(response._embedded.events[0]._embedded.venues[0].name);
+    var venue = venueName.join('');
+    
+    var venueAddress = Object.values(response._embedded.events[0]._embedded.venues[0].address);
+    var address = venueAddress.join('');
+    
+    var eventDates = Object.values(response._embedded.events[0].dates.start.localDate);
+    var eventTime = Object.values(response._embedded.events[0].dates.start.localTime);
+    var edate = eventDates.join('');
+    var etime = eventTime.join('');
+    var sched = "Date: " + edate + "  Time: " + etime;
+    var eventUrl = Object.values(response._embedded.events[0].url);
+    var site = eventUrl.join('');
+
+
+    console.log(name);
+    console.log(venue);
+    console.log(address);
+    console.log(sched);
+    console.log(site);
+
+
+    console.log()
     // Empty the contents of the artist-div, append the new artist content
-    $("#artist-div").empty();
-    $("#artist-div").append(artistURL, artistImage, trackerCount, upcomingEvents, goToArtist);
+    $("#results").empty();
+    $("#results").append(name, venue, address, sched, site);
     // var res = json.data;
     // var resultsDiv = $("<div>");
     // console.log(res);
@@ -90,12 +124,16 @@ function searchBandsInTown(artist) {
 function venueMap(maps) {
 
   // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
-  var queryURL = "https://maps.googleapis.com/maps/api/staticmap?" + input + "&city=phoenix&apikey=nXFGaGABlnZ60ow3g6mS88ZUNZD5Zp5A";
+  var queryURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lng + "&zoom=14&size=400x400&markers=colors:red&key=AIzaSyC3uNKNlSkGIG_BWclJcoLZOdEZj3yPhr8";
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-
+    console.log(queryURL);
+    $("#map").attr("src", queryURL)
 
   })
 }
+
+// src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3uNKNlSkGIG_BWclJcoLZOdEZj3yPhr8&callback=initMap">
+//https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=14&size=400x400&key=YOUR_API_KEY
