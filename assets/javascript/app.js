@@ -1,4 +1,9 @@
-//should be good
+document.body.style.backgroundImage = "url('https://upload.wikimedia.org/wikipedia/commons/8/84/Phoenix_AZ_Downtown_from_airplane.jpg')";
+
+
+
+
+//weather api
 //this page is linked to our html and to jquery
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 
