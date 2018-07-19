@@ -38,10 +38,9 @@ $.ajax({
   });
 
 
-  $(".btn").on("click", function(e){
+  $(document).on("click", ".btn", function(e){
     e.preventDefault();
     var id = $(this).data().id;
-    console.log(id);
     if (id === "search"){
       pullSearch();
     }
@@ -49,13 +48,13 @@ $.ajax({
       clear();
     }
     else if(id === "getMap"){
-      console.log(id);
-      venueMap();
+      venueMap($(this).data().coord);
     }
-
+    
   });
-
-
+  
+  
+  // $("#getMap").on("click", venueMap())
 
 //function and click event for search button
 var input = "";
@@ -147,19 +146,22 @@ function searchEventsInTown(event) {
 };
 
 
-function venueMap(maps) {
-  console.log(lat, lng);
+function venueMap(coord) {
+
+  console.log(coord.lat, coord.lng);
   // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
-  var queryURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lng + "&zoom=14&size=400x400&markers=colors:red&key=AIzaSyC3uNKNlSkGIG_BWclJcoLZOdEZj3yPhr8";
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function (response) {
+  var queryURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + coord.lat + "," + coord.lng + "&zoom=14&size=400x400&markers=colors:red&key=AIzaSyC3uNKNlSkGIG_BWclJcoLZOdEZj3yPhr8";
+  // $.ajax({
+  //   url: queryURL,
+  //   method: "GET"
+  // }).then(function (response) {
     console.log(queryURL);
     $("#map").attr("src", queryURL)
 
-  })
+  // })
 }
+
+
 
 // src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3uNKNlSkGIG_BWclJcoLZOdEZj3yPhr8&callback=initMap">
 //https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=14&size=400x400&key=YOUR_API_KEY
