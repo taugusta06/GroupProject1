@@ -29,12 +29,20 @@
                                     <label for="search">Event Search:</label>
                                     <input type="text" class="form-control" id="search-term" placeholder="search events in phoenix">
                                 </div>
+                                <div class="form-group">
+                                    <label for="searchCountSelect">Choose Amount Of Search Results</label>
+                                    <select class="form-control" id="searchAmount">
+                                      <option value="1">1</option>
+                                      <option value="5">5</option>
+                                      <option value="10">10</option>
+                                    </select>
+                                </div>
  
 
                                 <!-- Here we have our final submit button -->
-                                <button type="submit" class="btn btn-default" id="run-search">
+                                <button type="submit" class="btn btn-default" id="run-search" data-id="search">
                                     <i class="fa fa-search"></i> Search</button>
-                                <button class="btn btn-default" id="clear-all">
+                                <button class="btn btn-default" id="clear-all" data-id="reset">
                                     <i class="fa fa-trash"></i> Clear Results</button>
                             </form>
                         </div>
@@ -54,7 +62,7 @@
 
                 </div>
                 <div class="col-sm-6">
-                    <div class="card"><img id="map" src="assets/images/theMap.jpg" alt="i'm the map"></div>
+                    <div class="card"><div id="map"></div></div>
                 </div>
             </div>
             <div class="row">
@@ -65,6 +73,9 @@
             </div>
         </div>
     </div>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3uNKNlSkGIG_BWclJcoLZOdEZj3yPhr8">
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="assets/javascript/app.js"></script>
