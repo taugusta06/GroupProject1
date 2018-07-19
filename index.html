@@ -29,12 +29,20 @@
                                     <label for="search">Event Search:</label>
                                     <input type="text" class="form-control" id="search-term" placeholder="search events in phoenix">
                                 </div>
+                                <div class="form-group">
+                                    <label for="searchCountSelect">Choose Amount Of Search Results</label>
+                                    <select class="form-control" id="searchAmount">
+                                      <option value="1">1</option>
+                                      <option value="5">5</option>
+                                      <option value="10">10</option>
+                                    </select>
+                                </div>
  
 
                                 <!-- Here we have our final submit button -->
-                                <button type="submit" class="btn btn-default" id="run-search">
+                                <button type="submit" class="btn btn-default" id="run-search" data-id="search">
                                     <i class="fa fa-search"></i> Search</button>
-                                <button class="btn btn-default" id="clear-all">
+                                <button class="btn btn-default" id="clear-all" data-id="reset">
                                     <i class="fa fa-trash"></i> Clear Results</button>
                             </form>
                         </div>
