@@ -110,9 +110,9 @@ function searchEventsInTown(event) {
       var eventUrl = response._embedded.events[i].url;
 
       var result = $("<div>");
-      var title = $("<h4>");
-      var locale = $("<row>");
-      var showtime = $("<p>");
+      var title = $("<h4>").attr("id", "headline");
+      var locale = $("<row>").attr("id", "details");
+      var showtime = $("<p>").attr("id", "details");
       var buyNow = $("<a class='btn btn-primary'>").attr("data-id", "purchase").attr("href", eventUrl);
       var coord = {
         lat: lat,
