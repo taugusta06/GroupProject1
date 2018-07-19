@@ -41,7 +41,9 @@ font-weight: bold;
 }
 #map {
     width: 100%;
-    height: 410px;
+
+    height: 408px;
+
 }
 #results {
     background-color: rgb(231, 231, 231);
