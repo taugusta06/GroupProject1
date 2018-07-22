@@ -3,6 +3,10 @@ body {
     height: 100%;
     width: 100%;
 }
+#phoenixsign {
+    width: 75px;
+    height: 75px;
+}
 #run-search {
 background-color: rgb(67, 127, 255);
 font-weight: bold;
@@ -16,8 +20,8 @@ font-weight: bold;
 }
 .row {
     margin-bottom: 20px;
-    opacity: .8;
 }
+
 #title {
     text-align: center;
     font-weight: bold;
@@ -27,20 +31,20 @@ font-weight: bold;
     width: 100%;
     height: 100%;
     font-weight: bold;
+    opacity: .75;
     
 }
 #weather {
     width: 100%;
     height: 264px;
-    
+    opacity: .70;
 }
 #map {
     width: 100%;
-    height: 410px;
-    opacity: .8;
+    height: 492px;
 }
 #results {
+    background-color: rgb(231, 231, 231);
     width: 100%;
     height: 100%;
-    opacity: .8;
 }

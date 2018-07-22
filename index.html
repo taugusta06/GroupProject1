@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Events Bro</title>
+    <title>Phoenix Events</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
+    
     <!-- html crap -->
     <div class="container">
         <div class="jumbotron">
-            <h1 id="title">Events Bro</h1>
+            <h1 id="title"><img id="phoenixsign" src="assets/images/Phoenix Sticker.png"> Phoenix Event Finder <img id="phoenixsign" src="assets/images/Phoenix Sticker.png"></h1>
             <div class="row">
 
                 <div class="col-sm-6">
@@ -26,44 +26,56 @@
 
                                 <!-- Here we create the text box for capturing the search term-->
                                 <div class="form-group">
-                                    <label for="search">Search Term:</label>
+                                    <label for="search">Event Search:</label>
                                     <input type="text" class="form-control" id="search-term" placeholder="search events in phoenix">
+                                </div>
+                                <div class="form-group">
+                                    <label for="searchCountSelect">Choose Amount Of Search Results</label>
+                                    <select class="form-control" id="searchAmount">
+                                      <option value="1">1</option>
+                                      <option value="5">5</option>
+                                      <option value="10">10</option>
+                                    </select>
                                 </div>
  
 
                                 <!-- Here we have our final submit button -->
-                                <button type="submit" class="btn btn-default" id="run-search">
+                                <button type="submit" class="btn btn-default" id="run-search" data-id="search">
                                     <i class="fa fa-search"></i> Search</button>
-                                <button class="btn btn-default" id="clear-all">
+                                <button class="btn btn-default" id="clear-all" data-id="reset">
                                     <i class="fa fa-trash"></i> Clear Results</button>
-
                             </form>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="card" id="weather">
-                            <div id="city"></div>
-                            <div id="wind"></div>
-                            <div id="humidity"></div>
-                            <div id="temp"></div>
+                            <strong><div id="city"></div></strong>
+                            <br>
+                            <strong><div id="wind" style="font-size: 25px;"></div></strong>
+                            <br>
+                            <strong><div id="humidity" style="font-size: 25px;"></div></strong>
+                            <br>
+                            <strong><div id="temp" style="font-size: 25px;"></div></strong>
                         </div>
                     </div>
 
                 </div>
                 <div class="col-sm-6">
-                    <div class="card"><img id="map" src="assets/images/theMap.jpg" alt="i'm the map"></div>
+                    <div class="card"><div id="map"></div></div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="card" id="footer">results<div id="results"></div></div>
+                    <div class="col-sm-12">
                     
-
+                    <div class="card" id="results"><h4>Results:</h4></div>
                 </div>
             </div>
         </div>
     </div>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3uNKNlSkGIG_BWclJcoLZOdEZj3yPhr8">
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="assets/javascript/app.js"></script>
